@@ -1,8 +1,9 @@
 const inquirer = require('inquirer');
 const {writeFile} = require('fs/promises');
-const Triangle = require('./triangle');
-const Circle = require('./circle');
-const Square = require('./square');
+// const Triangle = require('./triangle');
+// const Circle = require('./circle');
+// const Square = require('./square');
+const SVG = require('./svgGen.js');
 
 class CLI {
   constructor(){
@@ -35,15 +36,19 @@ class CLI {
           message: "What color would you like the background shape?"
         }
       ])
-      .then ((response) => {
-          if (response.shape === 'Circle'){
-            const userSVG = new Circle();
-          }else if(response.shape === 'Square') {
-            const userSVG = new Square();
-          }else{
-            const userSVG = new Triangle();
-          }
-          return writeFile('logo.svg', userSVG);
+      .then ((children) => {
+          // if (response.shape === 'Circle'){
+          //   const userSVG = new Circle();
+          // }else if(response.shape === 'Square') {
+          //   const userSVG = new Square();
+          // }else{
+          //   const userSVG = new Triangle();
+          // }
+
+          // Call SVG class which combines all the other shape classes
+          const svg = new SVG(children);
+          
+          return writeFile('logo.svg', svg.render());
         }
       )
       // Write file to logo.svg
@@ -51,7 +56,9 @@ class CLI {
       // );
       .catch((err) => {
         console.log(err);
-        console.log('Shit is hella broke');
+        console.log('We in the business call this, "Broke as hell."');
       });
   }
 }
+
+module.exports = CLI;
