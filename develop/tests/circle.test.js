@@ -5,7 +5,8 @@ describe ("Circle", ()=> {
   describe ("render", ()=> {
 		it("Should created an SVG file using the circle function", () => {
 			// arrange
-			
+			const circle = new Circle;
+			const 
 			// act 
 
 			// assert
