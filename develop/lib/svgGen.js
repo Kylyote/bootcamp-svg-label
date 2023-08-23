@@ -4,23 +4,25 @@ const Square = require('./square');
 
 class SVGGen {
   constructor(children){
-      let userSVG = "";
+      // Using this. allows for the rest of the class to see the variable. If const or let was used, it would not be seen outside that block of code.
+      this.children = children;
+      this.userSVG = "";
       if (children.shape === 'Circle'){
-        userSVG = new Circle();
-        console.log("Text from children", '\n', children);
+        this.userSVG = new Circle(this.children.shapeColor);
+        //console.log("Text from children", '\n', children);
       }else if(children.shape === 'Square') {
-        userSVG = new Square();
+        this.userSVG = new Square(this.children.shapeColor);
       }else{
-        userSVG = new Triangle();
+        this.userSVG = new Triangle(this.children.shapeColor);
       }
-
     }
-    setSVG(children,userSVG) {
-      return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">${userSVG}<text x="150" y="125" font-size="60" text-anchor="middle" fill="${children.letterColor}">${children.letters}</text></svg>`;
+
+    setSVG() {
+      return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">${this.userSVG.render()}<text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.children.letterColor}">${this.children.letters}</text></svg>`;
     }
     
-    render(children, userSVG) {
-      return this.setSVG(children, userSVG);
+    render() {
+      return this.setSVG();
     }
 }
 

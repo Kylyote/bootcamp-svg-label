@@ -5,12 +5,13 @@ describe ("Circle", ()=> {
   describe ("render", ()=> {
 		it("Should created an SVG file using the circle function", () => {
 			// arrange
-			const circle = new Circle;
-			const 
+			this.shapeColor = "blue";
+			const circle = new Circle(this.shapeColor);
+			const expectedResult = `<circle cx="150" cy="100" r="80" fill="${this.shapeColor}" />`;
 			// act 
-
+			const result = circle.render();
 			// assert
-			
+			expect(result).toEqual(expectedResult);
 		});
 	});
 });

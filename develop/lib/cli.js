@@ -1,13 +1,11 @@
+// Import all required modules
 const inquirer = require('inquirer');
 const {writeFile} = require('fs/promises');
-// const Triangle = require('./triangle');
-// const Circle = require('./circle');
-// const Square = require('./square');
 const SVG = require('./svgGen.js');
 
 class CLI {
+  // Only the prototype is used as the index.js doesn't need to do more than call the CLI file.
   constructor(){
-
   }
 
   // Run code to ask user what input they want.
@@ -37,23 +35,15 @@ class CLI {
         }
       ])
       .then ((children) => {
-          // if (response.shape === 'Circle'){
-          //   const userSVG = new Circle();
-          // }else if(response.shape === 'Square') {
-          //   const userSVG = new Square();
-          // }else{
-          //   const userSVG = new Triangle();
-          // }
 
           // Call SVG class which combines all the other shape classes
           const svg = new SVG(children);
           
-          return writeFile('logo.svg', svg.render());
+          // Write the generated file to logo.svg in the example folder
+          return writeFile('./example/logo.svg', svg.render());
         }
       )
-      // Write file to logo.svg
-      // .then(
-      // );
+
       .catch((err) => {
         console.log(err);
         console.log('We in the business call this, "Broke as hell."');

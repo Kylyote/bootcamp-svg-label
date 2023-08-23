@@ -1,14 +1,14 @@
 const Shape = require('./shape.js');
 
+// Using "shapeColor" so that naming stays consistent even though it can be named whatever I wish. Using children more would be confusing.
 class Square extends Shape {
-  constructor(children){
-    super(children);
+  constructor(shapeColor){
+    super(shapeColor);
   }
-  // Where the real money from the movie is made.
+  
   render() {
-      return `<rect   `
+      return `<rect x="0" y="0" width="100" height="100" fill="${this.shapeColor} />`
   }
-
 }
 
 module.exports = Square;

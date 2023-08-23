@@ -3,13 +3,15 @@ const Shape = require('../lib/shape.js');
 
 describe ("Shape", ()=> {
   describe ("render", ()=> {
-		it("Should fail asking for user input", () => {
+		it("Should throw an error when called.", () => {
 			// arrange
 			const shape = new Shape();
 			const err = "Child class must implement render() method"
 			// act 
-			expect(shape.render).toThrow(err);
+			const result = shape.render();
+			console.log(result);
 			// assert
+			expect(result).toThrow(err);
 		});
 	});
 });
