@@ -40,7 +40,7 @@ class CLI {
           const svg = new SVG(children);
           
           // Write the generated file to logo.svg in the example folder
-          return writeFile('./example/logo.svg', svg.render());
+          return writeFile('.develop/example/logo.svg', svg.render());
         }
       )
 
