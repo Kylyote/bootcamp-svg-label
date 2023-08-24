@@ -7,7 +7,7 @@ describe ("Square", ()=> {
 			// arrange
 			this.shapeColor = "blue";
 			const square = new Square(this.shapeColor);
-			const expectedResult = `<rect x="90" y="45" width="120" height="120" fill="${this.shapeColor} />`;
+			const expectedResult = `<rect x="90" y="45" width="120" height="120" fill="${this.shapeColor}" />`;
 			// act 
 			const result = square.render();
 			// assert
