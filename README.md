@@ -11,9 +11,9 @@ Code that uses classes to take user input and create an SVG file.
 
 ## Description
 
-When index.js is run, it calls the CLI class to create a new object whichs then calls on the circle/square/triangle classes. In the terminal, the user is asked 4 questions about what they would like in the SVG file. Once these are input, an SVG is generated and saved into the /example folder.
+When index.js is run, it calls the CLI class to create a new object whichs then calls on the circle/square/triangle classes. In the terminal, the user is asked 4 questions about what they would like in the SVG file. Once these are input, an SVG is generated and saved into the /example folder with the shape and characters used being part of the name.
 
-The test are not run exactly as the example is given as I wanted to not have to make set functions for the colors. I think this reduced the number of lines of code needed while still being clear.
+The test are not run exactly as the example is given as I wanted to not have to make setter functions for the colors. I think this reduced the number of lines of code needed while still being clear.
 
 ## Acceptance Criteria
 

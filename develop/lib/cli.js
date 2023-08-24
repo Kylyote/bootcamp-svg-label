@@ -38,9 +38,8 @@ class CLI {
 
           // Call SVG class which combines all the other shape classes
           const svg = new SVG(children);
-          
-          // Write the generated file to logo.svg in the example folder
-          return writeFile('./develop/example/logo.svg', svg.render());
+          // Write the generated file to logo-<shape>-<text>.svg in the example folder
+          return writeFile(`./develop/example/logo-${children.shape}-${children.letters}.svg`, svg.render());
         }
       )
 
