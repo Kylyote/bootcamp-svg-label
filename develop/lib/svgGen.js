@@ -18,7 +18,18 @@ class SVGGen {
     }
 
     setSVG() {
+      // Adding the if else statements here will make it easier to add parameters for changing the size and centering of each shape
+      if (this.children.shape === 'Circle'){
+      
+      return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">${this.userSVG.render()}<text x="150" y="118" font-size="60" text-anchor="middle" fill="${this.children.letterColor}">${this.children.letters}</text></svg>`;
+      
+    }else if(this.children.shape === 'Square') {
+      
       return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">${this.userSVG.render()}<text x="150" y="125" font-size="60" text-anchor="middle" fill="${this.children.letterColor}">${this.children.letters}</text></svg>`;
+    }else{
+      
+      return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">${this.userSVG.render()}<text x="150" y="150" font-size="60" text-anchor="middle" fill="${this.children.letterColor}">${this.children.letters}</text></svg>`;
+    }
     }
     
     render() {
