@@ -42,3 +42,5 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 
 Link to Repo:  
 https://github.com/Kylyote/bootcamp-svg-label
+Link to video:  
+https://drive.google.com/file/d/1svfvTnFrBS2d6b-RRK_3sTLMur0u-bcC/view
